@@ -71,6 +71,9 @@ public class CaesarCipher {
 		}
 		return encrypted.toString();
 	}
+	
+	
+	
 	public static void main(String[] args) 
 	{
 		String text = new String();
@@ -88,9 +91,9 @@ public class CaesarCipher {
 		}
 		//System.out.println(text);
 		//System.out.println(encrypt(text, 10));
-		//System.out.println(encrypt("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!",15));		
+		System.out.println(encrypt("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee At noon be in the conference room with your hat on for a surprise party. YELL LOUD!",15));		
 		//System.out.println(encrypt("First Legion",17));
-		System.out.println(encryptTwoKey("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!",8,21));
+		//System.out.println(encryptTwoKey("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!",8,21));
 	}
 
 }
