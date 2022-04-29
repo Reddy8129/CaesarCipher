@@ -8,7 +8,6 @@ public class CountCommonWords
 	{
 		File file = new File(filename);
 		Scanner sc= null;
-		String[] common = new String[20];
 		sc= new Scanner(file);
 		return sc;
 
@@ -29,6 +28,7 @@ public class CountCommonWords
 
 	void countShakespeare() throws FileNotFoundException
 	{
+		//String[] plays = {"small.txt"};
 		String[] plays = {"caesar.txt", "errors.txt", "hamlet.txt", "likeit.txt", "macbeth.txt", "romeo.txt"};
 		String[] common = getCommon();
 		int[] counts = new int[common.length];
@@ -38,18 +38,54 @@ public class CountCommonWords
 			countWords(sc,common,counts);
 			System.out.println("done with "+plays[k]);
 		}
+		for (int i = 0; i < counts.length; i++) {
+			System.out.println(common[i]+ " ---> "+counts[i]);
+		}
 
 	}
 
 	void countWords(Scanner sc, String[] common, int[] counts) 
 	{
+		String[] words = getWords(sc).split(" ");
+		String word;
+		for (int i = 0; i < words.length; i++) 
+		{
+			word= words[i].toLowerCase();
+			int index =indexOf(common, word);
+			if(index!=-1)
+				counts[index]++;
+		}
+	}
+	
+	int indexOf(String[] common, String word) 
+	{
+		for (int i = 0; i < common.length; i++) 
+		{
+			if(common[i].equals(word))
+				return i;	
+		}
+		return -1;
+		
+	}
+
+	String getWords(Scanner sc)
+	{
+		String words=" ";
 		while(sc.hasNextLine())
 		{
-			String[] sc.nextLine()
+			words += sc.nextLine();
 		}
+		//System.out.println("from getWords "+words);
+		return words;
 	}
 
 
-
+public static void main(String[] args) throws FileNotFoundException 
+{
+	CountCommonWords ccw = new CountCommonWords();
+	//Scanner sc=ccw.getFile("Files\\small.txt");
+	//String s= ccw.getWords(sc);
+	ccw.countShakespeare();
+}
 
 }
