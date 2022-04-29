@@ -1,9 +1,8 @@
 public class CaesarBreaker 
 {
-	String alphabets;
-	void countLetters(int[] counts, String message)
+	private String alphabets="abcdefghijklmnopqrstuvwxyz";
+	private void countLetters(int[] counts, String message)
 	{
-		alphabets ="abcdefghijklmnopqrstuvwxyz";
 		for (int i = 0; i < message.length(); i++) 
 		{
 			int idx = alphabets.indexOf(message.toLowerCase().charAt(i));
@@ -11,7 +10,7 @@ public class CaesarBreaker
 				counts[idx]++;
 		}
 	}
-	int maxIndex(int[] freqs)
+	private int maxIndex(int[] freqs)
 	{
 		int max=0;
 		int maxDex=0;
