@@ -36,7 +36,7 @@ public class CaesarCipher {
 		char currChar,newChar;
 		StringBuilder encrypted = new StringBuilder(input.toUpperCase());
 		String alphabet ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		String shiftedAlphabetKey1= alphabet.substring(key1)+alphabet.substring(0,key2);
+		String shiftedAlphabetKey1= alphabet.substring(key1)+alphabet.substring(0,key1);
 		
 		String shiftedAlphabetKey2= alphabet.substring(key2)+alphabet.substring(0,key2);
 		
@@ -73,7 +73,6 @@ public class CaesarCipher {
 	}
 	
 	
-	
 	public static void main(String[] args) 
 	{
 		String text = new String();
@@ -91,9 +90,11 @@ public class CaesarCipher {
 		}
 		//System.out.println(text);
 		//System.out.println(encrypt(text, 10));
-		System.out.println(encrypt("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee At noon be in the conference room with your hat on for a surprise party. YELL LOUD!",15));		
+		//System.out.println(encrypt("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee At noon be in the conference room with your hat on for a surprise party. YELL LOUD!",15));		
 		//System.out.println(encrypt("First Legion",17));
 		//System.out.println(encryptTwoKey("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!",8,21));
+		System.out.println(encryptTwoKey("Cqy weva stho ek xpwe edp heyz",2,20));		
+
 	}
 
 }
