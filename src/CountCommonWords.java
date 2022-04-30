@@ -75,7 +75,6 @@ public class CountCommonWords
 		{
 			words += sc.nextLine();
 		}
-		//System.out.println("from getWords "+words);
 		return words;
 	}
 
@@ -83,8 +82,6 @@ public class CountCommonWords
 public static void main(String[] args) throws FileNotFoundException 
 {
 	CountCommonWords ccw = new CountCommonWords();
-	//Scanner sc=ccw.getFile("Files\\small.txt");
-	//String s= ccw.getWords(sc);
 	ccw.countShakespeare();
 }
 
